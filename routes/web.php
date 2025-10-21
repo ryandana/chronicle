@@ -20,10 +20,10 @@ Route::get('/', function (Request $request) {
     return view('home', ['posts' => $posts, 'banners' => Banner::all()]);
 });
 
-Route::get('/post/{post:slug}', function (Post $post) {
+Route::get('/posts/{post:slug}', function (Post $post) {
     return view('post', ['post' => $post]);
 });
 
-Route::get('/author/{author:nickname}', function (Author $author) {
+Route::get('/authors/{author:username}', function (Author $author) {
     return view('author', ['author' => $author]);
 });

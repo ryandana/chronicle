@@ -6,8 +6,24 @@
                 src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}">
         </div>
 
+        <div class="flex items- md:justify-start justify-center gap-3">
+            <div class="flex items-center gap-1 bg-yellow-400/20 p-2 rounded-md">
+                <img class="rounded-full w-5" src="{{ asset('storage/' . $post->author->avatar) }}"
+                    alt="{{ $post->author->nickname }}">
+                <span class="font-medium">{{ $post->author->nickname }}</span>
+            </div>
+            <div class="flex items-center gap-1 bg-yellow-400/20 p-2 rounded-md">
+                <x-heroicon-s-tag class="w-5 h-5"/>
+                <span class="font-medium">{{ $post->category->name }}</span>
+            </div>
+            <div class="flex items-center gap-1 bg-yellow-400/20 p-2 rounded-md">
+                <x-heroicon-c-calendar-date-range class="h-5 w-5" />
+                <span class="font-medium">{{ $post->created_at->format('d M Y') }}</span>
+            </div>
+        </div>
+
         <!-- Judul -->
-        <h1 class="font-bold text-4xl text-gray-900 border-b-4 border-yellow-400 pb-6">
+        <h1 class="font-bold md:text-4xl text-3xl md:text-start text-center text-gray-900 border-b-4 border-yellow-400 pb-6">
             {{ $post->title }}
         </h1>
 

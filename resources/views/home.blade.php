@@ -18,7 +18,7 @@
                         <h2 class="text-2xl md:text-4xl font-bold leading-tight drop-shadow-lg mb-3">
                             {{ $banner->post->title }}
                         </h2>
-                        <a href="{{ url('/post/' . $banner->post->slug) }}"
+                        <a href="{{ url('/posts/' . $banner->post->slug) }}"
                             class="inline-block bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition">
                             Read More →
                         </a>
@@ -28,11 +28,11 @@
         @endforeach
     </swiper-container>
 
-    <form action="">
+    <form action="" class="my-12">
         @csrf
-        <input type="search" name="search" id="search">
+        <input class="w-full rounded-md bg-white px-4 py-2" type="search" name="search" id="search">
     </form>
-    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 my-24">
+    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mb-24">
         @foreach ($posts as $post)
             <div
                 class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
@@ -71,14 +71,14 @@
 
                     <!-- Footer -->
                     <div class="mt-5 flex items-center justify-between">
-                        <a href="{{ url('author/' . $post->author->username) }}" class="flex items-center gap-2">
+                        <a href="{{ url('authors/' . $post->author->username) }}" class="flex items-center gap-2">
                             <img class="rounded-full h-7 w-7 object-cover"
                                 src="{{ asset('storage/' . $post->author->avatar) }}"
                                 alt="{{ $post->author->nickname }}">
                             <span class="text-sm font-medium text-gray-700">{{ $post->author->nickname }}</span>
                         </a>
 
-                        <a href="{{ url('post/' . $post->slug) }}"
+                        <a href="{{ url('posts/' . $post->slug) }}"
                             class="bg-yellow-400 hover:bg-yellow-300 text-black text-sm font-semibold px-3 py-1.5 rounded-lg transition">
                             Lebih Lanjut &raquo;
                         </a>

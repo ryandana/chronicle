@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    @include('components.navbar', ['categories' => \App\Models\Post::all()])
+
     <section class="min-h-dvh mx-auto max-w-7xl px-6">
         {{ $slot }}
     </section>

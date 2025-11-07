@@ -17,7 +17,7 @@ class PostsTable
         return $table
             ->columns([
                 ImageColumn::make("thumbnail"),
-                TextColumn::make("title")->searchable()->sortable(),
+                TextColumn::make("title")->limit(70)->searchable()->sortable(),
                 TextColumn::make("author.username"),
                 TextColumn::make("category.name"),
             ])

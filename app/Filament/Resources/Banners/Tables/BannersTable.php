@@ -16,7 +16,7 @@ class BannersTable
         return $table
             ->columns([
                 ImageColumn::make("post.thumbnail")->label("Thumbnail"),
-                TextColumn::make("post.title")->searchable()->label("Post Title"),
+                TextColumn::make("post.title")->searchable()->label("Post Title")->limit(70),
             ])
             ->filters([
                 //

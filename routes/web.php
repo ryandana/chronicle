@@ -1,29 +1,13 @@
 <?php
 
-use App\Models\Author;
-use App\Models\Banner;
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\HomeController;
 
+Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', \App\Livewire\PostsList::class);
 
-Route::get('/', function (Request $request) {
-    $search = $request->input('search');
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
-    $query = Post::query();
-
-    if ($search) {
-        $query->where('title', 'like', '%' . $search . '%');
-    }
-    $posts = $query->latest()->paginate(5)->withQueryString();
-
-    return view('home', ['posts' => $posts, 'banners' => Banner::all()]);
-});
-
-Route::get('/posts/{post:slug}', function (Post $post) {
-    return view('post', ['post' => $post]);
-});
-
-Route::get('/authors/{author:username}', function (Author $author) {
-    return view('author', ['author' => $author]);
-});
+Route::get('/authors/{author:username}', [AuthorController::class, 'show']);

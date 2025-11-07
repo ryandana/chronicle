@@ -11,7 +11,11 @@ class BannerForm
     {
         return $schema
             ->components([
-                Select::make("post_id")->label("Select Post For Banner")->relationship("post", "title"),
+                Select::make("post_id")
+                ->label("Select Post For Banner")
+                ->relationship("post", "title")
+                ->searchable()
+                ->preload(),
             ]);
     }
 }

@@ -12,9 +12,12 @@
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
-        "mdobes/rich-editor-fullscreen": "^1.2"
+        "livewire/livewire": "^3.6",
+        "mdobes/rich-editor-fullscreen": "^1.2",
+        "secondnetwork/blade-tabler-icons": "^3.35"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.16",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.24",

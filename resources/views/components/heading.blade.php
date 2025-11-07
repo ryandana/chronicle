@@ -1,0 +1,1 @@
+<h1 class="md:text-3xl text-xl font-semibold" {{ $attributes }}>{{ $slot }}</h1>

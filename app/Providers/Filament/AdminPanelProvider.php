@@ -27,9 +27,10 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->spa()
             ->login()
-            ->passwordReset()
             ->profile()
+            ->sidebarCollapsibleOnDesktop()
             ->authGuard('web')
             ->colors([
                 'primary' => Color::Yellow,

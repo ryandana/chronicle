@@ -1,15 +1,14 @@
 <header class="absolute top-0 left-0 w-full z-50 bg-white shadow-sm" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <a href="/" wire:navigate class="text-3xl font-extrabold text-yellow-600">
+        <a href="/" wire:navigate class="text-3xl font-semibold text-yellow-600">
             Chronicle
         </a>
 
         <nav class="hidden md:flex gap-8 text-base font-medium text-yellow-600">
             <a href="/" wire:navigate class="hover:text-yellow-700 transition">Home</a>
-            <a href="/posts" wire:navigate class="hover:text-yellow-700 transition">Posts</a>
             <a href="/categories" wire:navigate class="hover:text-yellow-700 transition">Categories</a>
-            <a href="/about" wire:navigate class="hover:text-yellow-700 transition">About</a>
+            <a href="/authors" wire:navigate class="hover:text-yellow-700 transition">Authors</a>
         </nav>
 
         <button @click="open = true" class="md:hidden text-yellow-600 text-3xl">

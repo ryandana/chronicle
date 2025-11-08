@@ -6,7 +6,7 @@
 
             {{-- Brand + Description --}}
             <div class="md:w-1/3">
-                <h2 class="text-4xl font-extrabold mb-3 tracking-tight">
+                <h2 class="text-4xl font-semibold mb-3 tracking-tight">
                     Chronicle
                 </h2>
                 <p class="text-base text-yellow-700/80 leading-relaxed">

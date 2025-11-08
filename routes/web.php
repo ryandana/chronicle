@@ -10,6 +10,7 @@ Route::get('/', [HomeController::class, 'index']);
 // Route::get('/', \App\Livewire\PostsList::class);
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-Route::get('/categories', [CategoryController::class, 'index']);
-// Route::get('/categories/{category:slug}', [CategoryController::class, 'index']);
-Route::get('/authors/{author:username}', [AuthorController::class, 'show']);
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/authors', [AuthorController::class, 'index'])->name('authors.index');
+Route::get('/authors/{username}', [AuthorController::class, 'show'])->name('authors.show');

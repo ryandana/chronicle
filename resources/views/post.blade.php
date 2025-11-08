@@ -84,7 +84,7 @@
 
                                     <div class="flex-1">
                                         <!-- Title -->
-                                        <h3 class="text-sm font-medium group-hover:text-blue-600 transition">
+                                        <h3 class="text-sm font-medium group-hover:text-yellow-600 transition">
                                             {{ Str::limit($post->title, 50) }}
                                         </h3>
 

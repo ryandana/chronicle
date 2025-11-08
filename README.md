@@ -14,12 +14,12 @@ cp .env.example .env
 ```
 Edit `.env` untuk konfigurasi database dan layanan lain.
 
-## 3. Install dependensi PHP
+## 3. Install dependensi PHP dan NodeJS
 ```
-composer install
+composer install && npm install
 ```
 
-## 4. Set izin folder
+## 4. Set izin folder (untuk Linux)
 ```
 chmod -R 775 storage bootstrap/cache
 chown -R www-data:www-data storage bootstrap/cache
@@ -48,5 +48,13 @@ php artisan filament:install
 
 ## 9. Jalankan aplikasi
 ```
-php artisan serve
+composer run dev
+
+## 10. Buka Admin panel
+
+http://yourlink/admin
+
+## 11. Buat Admin User
+
+php artisan make:filament-user
 ```

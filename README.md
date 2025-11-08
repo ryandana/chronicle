@@ -1,4 +1,4 @@
-# README.md — Setup singkat
+# Setup singkat
 
 Panduan singkat langkah demi langkah untuk menjalankan proyek Laravel ini. Asumsikan Anda sudah punya PHP, Composer, dan database.
 

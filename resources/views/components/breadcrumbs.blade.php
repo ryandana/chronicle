@@ -8,7 +8,7 @@
         <ol class="flex items-center space-x-2 text-sm">
             {{-- HOME --}}
             <li>
-                <a href="{{ url('/') }}" class="text-yellow-600 hover:underline">Beranda</a>
+                <a wire:navigate href="{{ url('/') }}" class="text-yellow-600 hover:underline">Beranda</a>
             </li>
 
             @php $accumulated = ''; @endphp

@@ -35,10 +35,12 @@ class PostForm
                     ->required(),
                 Select::make("category_id")
                     ->relationship("category", "name")
-                    ->label('Category'),
+                    ->label('Category')
+                    ->required(),
                 Select::make("author_id")
                     ->relationship("author", "username")
-                    ->label('Author'),
+                    ->label('Author')
+                    ->required(),
                 RichEditor::make("content")
                     ->label("Fill the content")
                     ->toolbarButtons([

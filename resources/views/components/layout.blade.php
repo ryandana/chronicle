@@ -10,12 +10,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-    @include('components.navbar', ['categories' => \App\Models\Post::all()])
-    
+<body x-data="{ open: false }">
+    <x-header></x-header>
+
     <section class="min-h-dvh mx-auto max-w-7xl px-6">
         {{ $slot }}
     </section>
+    <x-footer></x-footer>
     @livewireScripts()
 </body>
 

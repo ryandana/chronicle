@@ -3,8 +3,12 @@
     <div class="my-12 relative">
         <x-tabler-search class="absolute top-3 left-3 text-gray-500 text-sm" />
 
-        <input wire:model.live.debounce.100ms="search" type="search"
+        <input wire:model.live.debounce.300ms="search" type="text"
             class="w-full rounded-xl bg-gray-100 px-11 py-3 outline-0" placeholder="Cari berita yang kamu inginkan..">
+    </div>
+
+     <div class="mb-8">
+        {{ $posts->links('vendor.pagination.custom') }}
     </div>
 
     @if ($posts->count())
@@ -18,14 +22,14 @@
             </x-heading>
         </div>
 
-        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
             @foreach ($posts as $post)
                 <div
                     class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
 
                     <div class="relative overflow-hidden">
                         <img src="{{ asset('storage/' . $post->thumbnail) }}"
-                            class="w-full md:h-[200px] h-[250px] object-cover transition-transform duration-700 group-hover:scale-105">
+                            class="w-full md:h-[200px] h-[250px] object-cover transition-transform duration-600 group-hover:scale-105">
                     </div>
 
                     <div class="p-5 flex flex-col flex-grow justify-between">
@@ -33,17 +37,17 @@
 
                             <div class="flex md:flex-row flex-col md:items-center items-start gap-2">
                                 <span
-                                    class="bg-yellow-400/20 text-yellow-700 rounded-md py-1 px-2 text-xs font-semibold uppercase">
+                                    class="bg-yellow-600/20 text-yellow-600 rounded-md py-1 px-2 text-xs font-semibold uppercase">
                                     {{ $post->category->name }}
                                 </span>
                                 <span
-                                    class="bg-yellow-400/20 text-yellow-700 rounded-md py-1 px-2 text-xs font-semibold uppercase">
+                                    class="bg-yellow-600/20 text-yellow-600 rounded-md py-1 px-2 text-xs font-semibold uppercase">
                                     {{ $post->created_at->diffForHumans() }}
                                 </span>
                             </div>
 
                             <h2 class="text-lg font-bold text-gray-900">
-                                {{ $post->title }}
+                                {!! Str::limit(strip_tags(string: $post->title), 80) !!}
                             </h2>
 
                             <p class="text-sm text-gray-600">
@@ -55,11 +59,11 @@
                             <a href="{{ url('authors/' . $post->author->username) }}" class="flex items-center gap-2">
                                 <img class="rounded-full h-7 w-7 object-cover"
                                     src="{{ asset('storage/' . $post->author->avatar) }}">
-                                <span class="text-sm font-medium text-gray-700">{{ $post->author->nickname }}</span>
+                                <span class="text-sm font-medium text-gray-600">{{ $post->author->nickname }}</span>
                             </a>
 
                             <a href="{{ url('posts/' . $post->slug) }}" wire:navigate
-                                class="bg-yellow-400 hover:bg-yellow-300 text-black text-sm font-semibold px-3 py-1.5 rounded-lg">
+                                class="bg-yellow-600 text-white text-sm font-semibold px-3 py-1.5 rounded-lg">
                                 Lebih Lanjut &raquo;
                             </a>
                         </div>
@@ -73,15 +77,13 @@
             <p>Coba kata kunci lain atau kembali ke halaman utama.</p>
 
             <a href="/"
-                class="flex items-center gap-2 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg">
+                class="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white font-semibold rounded-lg">
                 <x-heroicon-s-arrow-left class="w-5 h-5" />
                 Kembali
             </a>
         </div>
     @endif
 
-    <div class="my-8">
-        {{ $posts->links() }}
-    </div>
+   
 
 </div>

@@ -49,12 +49,19 @@ php artisan filament:install
 ## 9. Jalankan aplikasi
 ```
 composer run dev
+```
 
 ## 10. Buka Admin panel
-
+```
 http://yourlink/admin
+```
 
 ## 11. Buat Admin User
-
+```
 php artisan make:filament-user
+```
+
+## 12. Login!
+```
+Masukan Email dan Passwordmu!
 ```

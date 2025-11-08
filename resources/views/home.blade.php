@@ -1,6 +1,6 @@
 <x-layout>
-    <swiper-container class="w-full h-[450px] rounded-2xl overflow-hidden mt-24" slides-per-view="1" loop="true"
-        wire:ignore autoplay="true" speed="800" space-between="20" pagination="false" navigation="false">
+    <swiper-container class="w-full h-[450px] rounded-2xl overflow-hidden mt-12" slides-per-view="1" loop="true" wire:ignore
+        autoplay="true" speed="800" space-between="20" pagination="false" navigation="false">
 
         @foreach ($banners as $banner)
             <swiper-slide>

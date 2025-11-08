@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="max-w-7xl mx-auto px-4 my-24">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col md:flex-row-reverse gap-10">
             <div class="w-full md:w-2/3 flex flex-col gap-6">
 
@@ -66,11 +66,9 @@
                 </div>
             </div>
 
-            <!-- RIGHT SIDEBAR -->
             <div class="w-full md:w-1/3">
                 <div class="md:sticky md:top-5 flex flex-col space-y-6">
 
-                    <!-- Latest Posts -->
                     <div class="bg-white rounded-xl p-4 shadow">
                         <h2 class="text-lg font-semibold mb-4">Latest Posts</h2>
 

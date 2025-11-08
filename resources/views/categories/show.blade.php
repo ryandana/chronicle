@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="max-w-7xl mx-auto mt-24">
+    <div class="max-w-7xl mx-auto ">
 
         <h1 class="text-2xl font-bold mb-6">
             Kategori: {{ $category->name }}
@@ -45,13 +45,14 @@
                         </div>
 
                         <div class="mt-5 flex items-center justify-between">
-                            <a href="{{ url('authors/' . $post->author->username) }}" class="flex items-center gap-2">
+                            <a wire:navigate href="{{ url('authors/' . $post->author->username) }}"
+                                class="flex items-center gap-2">
                                 <img class="rounded-full h-7 w-7 object-cover"
                                     src="{{ asset('storage/' . $post->author->avatar) }}">
                                 <span class="text-sm font-medium text-gray-600">{{ $post->author->nickname }}</span>
                             </a>
 
-                            <a href="{{ url('posts/' . $post->slug) }}"
+                            <a wire:navigate href="{{ url('posts/' . $post->slug) }}"
                                 class="bg-yellow-600 text-white text-sm font-semibold px-3 py-1.5 rounded-lg">
                                 Lebih Lanjut &raquo;
                             </a>

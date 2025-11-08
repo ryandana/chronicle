@@ -1,7 +1,7 @@
 <x-layout>
 
     {{-- Author Header --}}
-    <div class="max-w-7xl mx-auto mt-24">
+    <div class="max-w-7xl mx-auto ">
 
         <div class="bg-white shadow-md rounded-2xl p-8 flex gap-6 items-start">
             <img src="{{ asset('storage/' . $author->avatar) }}" class="w-32 h-32 rounded-full object-cover shadow-md">
@@ -28,7 +28,12 @@
         </div>
 
         {{-- Title --}}
-        <h2 class="text-xl font-bold mt-10 mb-4">Postingan oleh {{ $author->nickname }}</h2>
+        <h2 class="text-xl font-bold mt-10">Postingan oleh {{ $author->nickname }}</h2>
+
+        {{-- Pagination --}}
+        <div class="mt-10 mb-4">
+            {{ $posts->links('vendor.pagination.custom') }}
+        </div>
 
         {{-- Post Cards --}}
         <div class="grid md:grid-cols-3 grid-cols-1 gap-6">
@@ -66,13 +71,14 @@
                         </div>
 
                         <div class="mt-5 flex items-center justify-between">
-                            <a href="{{ url('authors/' . $post->author->username) }}" class="flex items-center gap-2">
+                            <a wire:navigate href="{{ url('authors/' . $post->author->username) }}"
+                                class="flex items-center gap-2">
                                 <img class="rounded-full h-7 w-7 object-cover"
                                     src="{{ asset('storage/' . $post->author->avatar) }}">
                                 <span class="text-sm font-medium text-gray-600">{{ $post->author->nickname }}</span>
                             </a>
 
-                            <a href="{{ url('posts/' . $post->slug) }}"
+                            <a wire:navigate href="{{ url('posts/' . $post->slug) }}"
                                 class="bg-yellow-600 text-white text-sm font-semibold px-3 py-1.5 rounded-lg">
                                 Lebih Lanjut &raquo;
                             </a>
@@ -83,10 +89,7 @@
             @endforeach
         </div>
 
-        {{-- Pagination --}}
-        <div class="mt-10">
-            {{ $posts->links() }}
-        </div>
+
 
     </div>
 

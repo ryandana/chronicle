@@ -1,4 +1,4 @@
-<header class="absolute top-0 left-0 w-full z-50 bg-white shadow-sm" x-data="{ open: false }">
+<header class="w-full z-50 bg-white shadow-sm" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         <a href="/" wire:navigate class="text-3xl font-semibold text-yellow-600">
@@ -6,9 +6,9 @@
         </a>
 
         <nav class="hidden md:flex gap-8 text-base font-medium text-yellow-600">
-            <a href="/" wire:navigate class="hover:text-yellow-700 transition">Home</a>
-            <a href="/categories" wire:navigate class="hover:text-yellow-700 transition">Categories</a>
-            <a href="/authors" wire:navigate class="hover:text-yellow-700 transition">Authors</a>
+            <a href="/" wire:navigate class="hover:text-yellow-700 transition">Beranda</a>
+            <a href="/categories" wire:navigate class="hover:text-yellow-700 transition">Kategori</a>
+            <a href="/authors" wire:navigate class="hover:text-yellow-700 transition">Author</a>
         </nav>
 
         <button @click="open = true" class="md:hidden text-yellow-600 text-3xl">
@@ -33,10 +33,9 @@
         </div>
 
         <div class="flex flex-col items-center justify-center flex-grow gap-6 text-2xl font-semibold text-yellow-600">
-            <a href="/" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">Home</a>
-            <a href="/posts" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">Posts</a>
-            <a href="/categories" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">Categories</a>
-            <a href="/about" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">About</a>
+            <a href="/" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">Beranda</a>
+            <a href="/categories" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">Kategori</a>
+            <a href="/authors" wire:navigate @click="open = false" class="hover:text-yellow-700 transition">Author</a>
         </div>
     </div>
 </header>

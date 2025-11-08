@@ -14,6 +14,7 @@
     <x-header></x-header>
 
     <section class="min-h-dvh mx-auto max-w-7xl px-6">
+        <x-breadcrumbs />
         {{ $slot }}
     </section>
     <x-footer></x-footer>

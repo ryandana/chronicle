@@ -7,7 +7,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
-// Route::get('/', \App\Livewire\PostsList::class);
+Route::redirect('/posts', '/');
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');

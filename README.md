@@ -4,8 +4,8 @@ Panduan singkat langkah demi langkah untuk menjalankan proyek Laravel ini. Asums
 
 ## 1. Clone repo
 ```
-git clone <repo-url>
-cd <repo-folder>
+git clone https://github.com/ryandana/chronicle
+cd chronicle
 ```
 
 ## 2. Salin file environment
